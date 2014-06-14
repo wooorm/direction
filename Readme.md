@@ -1,6 +1,6 @@
 # direction [![Build Status](https://travis-ci.org/wooorm/direction.svg?branch=master)](https://travis-ci.org/wooorm/direction) [![Coverage Status](https://img.shields.io/coveralls/wooorm/direction.svg)](https://coveralls.io/r/wooorm/direction?branch=master)
 
-[![browser support](https://ci.testling.com/wooorm/parse-english.png) ](https://ci.testling.com/wooorm/parse-english)
+[![browser support](https://ci.testling.com/wooorm/direction.png) ](https://ci.testling.com/wooorm/direction)
 
 See [Browser Support](#browser-support) for more information (a.k.a. don’t worry about those grey icons above).
 
@@ -35,7 +35,7 @@ direction("@"); // "neutral"
 ```
 
 ## Browser Support
-Pretty much every browser (available through browserstack) runs all parse-english unit tests.
+Pretty much every browser (available through browserstack) runs all direction unit tests.
 
 ## License
 
