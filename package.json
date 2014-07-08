@@ -1,6 +1,6 @@
 {
   "name": "direction",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Detect directionality: left-to-right, right-to-left, or neutral",
   "keywords": [
     "writing",
