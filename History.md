@@ -1,4 +1,10 @@
 
+n.n.n / 2014-07-08
+==================
+
+ * Added changelog
+ * Removed functionality to browserify the unit tests by default
+
 0.0.3 / 2014-06-19
 ==================
 
