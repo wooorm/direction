@@ -1,11 +1,21 @@
 'use strict';
 
-var direction, assert, data;
+var direction,
+    assert,
+    fixtures;
+
+/**
+ * Module dependencies.
+ */
 
 direction = require('..');
 assert = require('assert');
 
-data = {
+/**
+ * Test data.
+ */
+
+fixtures = {
     'a' : 'ltr',
     '\u05e0' : 'rtl',
     '\u0000' : 'neutral',
@@ -29,19 +39,24 @@ data = {
     'بسيطة' : 'rtl'
 };
 
-function classifyDirection(input, output) {
-    it('should classify `' + input + '` as `' + output + '` ', function () {
-        assert(direction(input) === output);
-    });
-}
+/**
+ * Unit tests.
+ */
 
-describe('direction()', function () {
+describe('direction(value)', function () {
     it('should be of type `function`', function () {
         assert(typeof direction === 'function');
     });
 
-    var value;
-    for (value in data) {
-        classifyDirection(value, data[value]);
-    }
+    Object.keys(fixtures).forEach(function (fixture) {
+        var result;
+
+        result = fixtures[fixture];
+
+        it('should classify `' + fixture + '` as `' + result + '` ',
+            function () {
+                assert(direction(fixture) === result);
+            }
+        );
+    });
 });
