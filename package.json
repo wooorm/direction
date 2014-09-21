@@ -2,6 +2,7 @@
   "name": "direction",
   "version": "0.1.0",
   "description": "Detect directionality: left-to-right, right-to-left, or neutral",
+  "license": "MIT",
   "keywords": [
     "writing",
     "system",
@@ -11,7 +12,6 @@
     "ltr"
   ],
   "author": "Titus Wormer <tituswormer@gmail.com>",
-  "license": "MIT",
   "devDependencies": {
     "istanbul": "^0.3.0",
     "jscs": "^1.5.0",

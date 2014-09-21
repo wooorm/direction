@@ -1,8 +1,8 @@
 {
   "name": "direction",
-  "repository": "wooorm/direction",
-  "description": "Detect directionality: left-to-right, right-to-left, or neutral",
   "version": "0.1.0",
+  "description": "Detect directionality: left-to-right, right-to-left, or neutral",
+  "license": "MIT",
   "keywords": [
     "writing",
     "system",
@@ -14,5 +14,5 @@
   "scripts" : [
     "index.js"
   ],
-  "license": "MIT"
+  "repository": "wooorm/direction"
 }
