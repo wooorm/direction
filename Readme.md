@@ -1,11 +1,5 @@
 # direction [![Build Status](https://travis-ci.org/wooorm/direction.svg?branch=master)](https://travis-ci.org/wooorm/direction) [![Coverage Status](https://img.shields.io/coveralls/wooorm/direction.svg)](https://coveralls.io/r/wooorm/direction?branch=master)
 
-[![browser support](https://ci.testling.com/wooorm/direction.png) ](https://ci.testling.com/wooorm/direction)
-
-See [Browser Support](#browser-support) for more information (a.k.a. don’t worry about those grey icons above).
-
----
-
 Detect direction: left-to-right, right-to-left, or neutral.
 
 * Similar to [component/directionality](https://github.com/component/directionality) —  which does not support 'neutral';
@@ -33,9 +27,6 @@ direction("anglais"); // "ltr"
 direction("بسيطة"); // "rtl"
 direction("@"); // "neutral"
 ```
-
-## Browser Support
-Pretty much every browser (available through browserstack) runs all direction unit tests.
 
 ## License
 
