@@ -30,4 +30,4 @@ direction("@"); // "neutral"
 
 ## License
 
-  MIT
+MIT © Titus Wormer
