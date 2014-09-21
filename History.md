@@ -1,4 +1,18 @@
 
+n.n.n / 2014-09-21
+==================
+
+ * Refactor spec
+ * Update .gitignore, .npmignore
+ * Remove browser test
+ * Add comments to API
+ * Update Installation in docs
+ * Add bower.json
+ * Reorder properties in package.json and component.json
+ * Update copyright in docs
+ * Remove testling
+ * Update eslint, broaden jscs and mocha version ranges
+
 0.1.0 / 2014-07-08
 ==================
 
