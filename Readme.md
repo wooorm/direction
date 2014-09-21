@@ -7,14 +7,19 @@ Detect direction: left-to-right, right-to-left, or neutral.
 
 ## Installation
 
-NPM:
+npm:
 ```sh
 $ npm install direction
 ```
 
-Component.js:
+Component:
 ```sh
 $ component install wooorm/direction
+```
+
+Bower:
+```sh
+$ bower install direction
 ```
 
 ## Usage
