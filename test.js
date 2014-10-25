@@ -1,19 +1,20 @@
 'use strict';
 
-var direction,
-    assert,
-    fixtures;
-
 /**
- * Module dependencies.
+ * Dependencies.
  */
+
+var direction,
+    assert;
 
 direction = require('./');
 assert = require('assert');
 
 /**
- * Test data.
+ * Fixtures
  */
+
+var fixtures;
 
 fixtures = {
     'a' : 'ltr',
@@ -40,7 +41,7 @@ fixtures = {
 };
 
 /**
- * Unit tests.
+ * Tests.
  */
 
 describe('direction(value)', function () {
