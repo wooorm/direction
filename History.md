@@ -1,4 +1,15 @@
 
+n.n.n / 2014-10-25
+==================
+
+ * Refactor test
+ * Remove `before_install` travis script
+ * Refactor property order in `package.json`, `component.json`
+ * Refactor `.jscs.json`
+ * Update `.gitignore`, `.npmignore`, bower ignore
+ * Move `spec/` to `test.js`
+ * Update mocha
+
 0.1.1 / 2014-09-21
 ==================
 
