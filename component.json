@@ -11,8 +11,8 @@
     "rtl",
     "ltr"
   ],
+  "repository": "wooorm/direction",
   "scripts" : [
     "index.js"
-  ],
-  "repository": "wooorm/direction"
+  ]
 }
