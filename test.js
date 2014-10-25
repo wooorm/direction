@@ -8,7 +8,7 @@ var direction,
  * Module dependencies.
  */
 
-direction = require('..');
+direction = require('./');
 assert = require('assert');
 
 /**
