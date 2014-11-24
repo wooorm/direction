@@ -1,4 +1,16 @@
 
+n.n.n / 2014-11-24
+==================
+
+ * Refactor `Readme.md`
+ * Add `.eslintrc`
+ * Refactor to disallow space after object keys
+ * Add flat badges to `Readme.md`
+ * Add CLI
+ * Fix incorrect executive rights on `test.js`
+ * Update eslint
+ * Add auto npm deployment to travis
+
 0.1.2 / 2014-10-25
 ==================
 
