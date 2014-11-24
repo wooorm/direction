@@ -1,6 +1,6 @@
 {
   "name": "direction",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Detect directionality: left-to-right, right-to-left, or neutral",
   "license": "MIT",
   "keywords": [
