@@ -1,9 +1,27 @@
 #!/usr/bin/env node
 'use strict';
 
-var pack = require('./package.json');
-var direction = require('./');
-var argv = process.argv.slice(2);
+/**
+ * Dependencies.
+ */
+
+var direction,
+    pack;
+
+pack = require('./package.json');
+direction = require('./');
+
+/**
+ * Arguments.
+ */
+
+var argv;
+
+argv = process.argv.slice(2);
+
+/**
+ * Help.
+ */
 
 function help() {
     console.log([
@@ -30,6 +48,10 @@ function help() {
         '# rtl'
     ].join('\n  ') + '\n');
 }
+
+/**
+ * Program.
+ */
 
 if (
     argv.indexOf('--help') === 0 ||

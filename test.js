@@ -17,27 +17,27 @@ assert = require('assert');
 var fixtures;
 
 fixtures = {
-    'a' : 'ltr',
-    '\u05e0' : 'rtl',
-    '\u0000' : 'neutral',
-    '\u0020' : 'neutral',
-    '!' : 'neutral',
-    '@' : 'neutral',
-    '[' : 'neutral',
-    '`' : 'neutral',
-    '0' : 'neutral',
-    '123' : 'neutral',
-    'A' : 'ltr',
-    'english' : 'ltr',
-    'sentence' : 'ltr',
-    'Un' : 'ltr',
-    'simple' : 'ltr',
-    'anglais' : 'ltr',
-    'phrase' : 'ltr',
-    'أ' : 'rtl',
-    'الجملة' : 'rtl',
-    'الانجليزية' : 'rtl',
-    'بسيطة' : 'rtl'
+    'a': 'ltr',
+    '\u05e0': 'rtl',
+    '\u0000': 'neutral',
+    '\u0020': 'neutral',
+    '!': 'neutral',
+    '@': 'neutral',
+    '[': 'neutral',
+    '`': 'neutral',
+    '0': 'neutral',
+    '123': 'neutral',
+    'A': 'ltr',
+    'english': 'ltr',
+    'sentence': 'ltr',
+    'Un': 'ltr',
+    'simple': 'ltr',
+    'anglais': 'ltr',
+    'phrase': 'ltr',
+    'أ': 'rtl',
+    'الجملة': 'rtl',
+    'الانجليزية': 'rtl',
+    'بسيطة': 'rtl'
 };
 
 /**
