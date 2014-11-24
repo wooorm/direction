@@ -33,6 +33,37 @@ direction("بسيطة"); // "rtl"
 direction("@"); // "neutral"
 ```
 
+## CLI
+
+Install:
+```sh
+$ npm install direction --global
+```
+
+Usage:
+```
+  Usage: direction [options] <file>
+  
+  Options:
+  
+    -h, --help           output usage information
+    -v, --version        output version number
+    -e, --exec <value>   output direction of <value>
+  
+  Usage:
+  
+  # output direction of given value
+  $ direction -e "@"
+  # neutral
+  
+  # output direction of in.txt to out.txt
+  $ direction in.txt > out.txt
+  
+  # output direction from stdin to to out.txt
+  $ echo "الانجليزية" | direction
+  # rtl
+```
+
 ## License
 
 MIT © Titus Wormer
