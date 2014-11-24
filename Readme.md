@@ -1,4 +1,4 @@
-# direction [![Build Status](https://travis-ci.org/wooorm/direction.svg?branch=master)](https://travis-ci.org/wooorm/direction) [![Coverage Status](https://img.shields.io/coveralls/wooorm/direction.svg)](https://coveralls.io/r/wooorm/direction?branch=master)
+# direction [![Build Status](https://img.shields.io/travis/wooorm/direction.svg?style=flat)](https://travis-ci.org/wooorm/direction) [![Coverage Status](https://img.shields.io/coveralls/wooorm/direction.svg?style=flat)](https://coveralls.io/r/wooorm/direction?branch=master)
 
 Detect direction: left-to-right, right-to-left, or neutral.
 
