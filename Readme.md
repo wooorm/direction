@@ -2,9 +2,6 @@
 
 Detect direction: left-to-right, right-to-left, or neutral.
 
-* Similar to [component/directionality](https://github.com/component/directionality) —  which does not support 'neutral';
-* Based on [Google Closure Library](https://github.com/google/closure-library/blob/master/closure/goog/i18n/bidi.js) — the methodology.
-
 ## Installation
 
 npm:
@@ -66,4 +63,4 @@ Usage:
 
 ## License
 
-MIT © Titus Wormer
+MIT © [Titus Wormer](http://wooorm.com)
