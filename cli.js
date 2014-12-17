@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-/**
+/*
  * Dependencies.
  */
 
@@ -11,7 +11,7 @@ var direction,
 pack = require('./package.json');
 direction = require('./');
 
-/**
+/*
  * Arguments.
  */
 
@@ -20,9 +20,8 @@ var argv;
 argv = process.argv.slice(2);
 
 /**
- * Help.
+ * Show help message.
  */
-
 function help() {
     console.log([
         '',
@@ -49,7 +48,7 @@ function help() {
     ].join('\n  ') + '\n');
 }
 
-/**
+/*
  * Program.
  */
 

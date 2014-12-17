@@ -5,7 +5,7 @@ var GROUP_LEFT_TO_RIGHT,
     EXPRESSION_LEFT_TO_RIGHT,
     EXPRESSION_RIGHT_TO_LEFT;
 
-/**
+/*
  * Character ranges of left-to-right characters.
  */
 
@@ -13,13 +13,13 @@ GROUP_LEFT_TO_RIGHT = 'A-Za-z\u00C0-\u00D6\u00D8-\u00F6' +
     '\u00F8-\u02B8\u0300-\u0590\u0800-\u1FFF\u200E\u2C00-\uFB1C' +
     '\uFE00-\uFE6F\uFEFD-\uFFFF';
 
-/**
+/*
  * Character ranges of right-to-left characters.
  */
 
 GROUP_RIGHT_TO_LEFT = '\u0591-\u07FF\uFB1D-\uFDFD\uFE70-\uFEFC';
 
-/**
+/*
  * Expression to match a left-to-right string.
  *
  * Matches the start of a string, followed by zero or
@@ -31,7 +31,7 @@ EXPRESSION_LEFT_TO_RIGHT = new RegExp(
     '^[^' + GROUP_RIGHT_TO_LEFT + ']*[' + GROUP_LEFT_TO_RIGHT + ']'
 );
 
-/**
+/*
  * Expression to match a right-to-left string.
  *
  * Matches the start of a string, followed by zero or
@@ -50,7 +50,6 @@ EXPRESSION_RIGHT_TO_LEFT = new RegExp(
  * @return {string} - One of `"rtl"`, `"ltr"`, or
  *   `"neutral"`.
  */
-
 function direction(value) {
     value = value.toString();
 
@@ -65,7 +64,7 @@ function direction(value) {
     return 'neutral';
 }
 
-/**
+/*
  * Expose `direction`.
  */
 
