@@ -1,5 +1,5 @@
 
-n.n.n / 2014-12-17
+0.1.5 / 2014-12-17
 ==================
 
  * Update CLI, add tests, refactor
