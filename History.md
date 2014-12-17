@@ -1,4 +1,14 @@
 
+n.n.n / 2014-12-17
+==================
+
+ * Update CLI, add tests, refactor
+ * Refactor to adhere to strict jsdoc style
+ * Add jscs-jsdoc as a dev-dependency
+ * Add jscs-jsdoc as a dev-dependency
+ * Refactor npm scripts for changes in npm@2.0.0
+ * Update eslint
+
 0.1.4 / 2014-11-24
 ==================
 
