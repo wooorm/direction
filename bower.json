@@ -9,7 +9,9 @@
     "direction",
     "directionality",
     "rtl",
-    "ltr"
+    "ltr",
+    "cli",
+    "bin"
   ],
   "repository": {
     "type": "git",
@@ -26,9 +28,9 @@
     "components/",
     "coverage/",
     "node_modules/",
-    "cli.js",
     "component.json",
     "package.json",
+    "cli.js",
     "test.js"
   ]
 }

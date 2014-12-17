@@ -9,7 +9,9 @@
     "direction",
     "directionality",
     "rtl",
-    "ltr"
+    "ltr",
+    "cli",
+    "bin"
   ],
   "repository": "wooorm/direction",
   "scripts" : [

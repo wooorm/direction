@@ -29,8 +29,11 @@
     "mocha": "^2.0.0"
   },
   "scripts": {
-    "test": "_mocha --check-leaks test.js",
-    "test-travis": "istanbul cover _mocha --report lcovonly -- --check-leaks test.js",
+    "test-lib": "_mocha --check-leaks test.js",
+    "test-cli": "bash ./test.sh",
+    "test-coveralls": "istanbul cover _mocha --report lcovonly -- --check-leaks test.js",
+    "test-travis": "npm run test-cli && npm run test-coveralls",
+    "test": "npm run test-lib && npm run test-cli",
     "coverage": "istanbul cover _mocha -- -- test.js",
     "lint-api": "eslint index.js",
     "lint-cli": "eslint cli.js",

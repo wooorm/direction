@@ -5,17 +5,17 @@ Detect direction: left-to-right, right-to-left, or neutral.
 ## Installation
 
 npm:
-```sh
+```bash
 $ npm install direction
 ```
 
 Component:
-```sh
+```bash
 $ component install wooorm/direction
 ```
 
 Bower:
-```sh
+```bash
 $ bower install direction
 ```
 
@@ -33,32 +33,30 @@ direction("@"); // "neutral"
 ## CLI
 
 Install:
-```sh
+```bash
 $ npm install direction --global
 ```
 
 Usage:
 ```
-  Usage: direction [options] <file>
-  
-  Options:
-  
-    -h, --help           output usage information
-    -v, --version        output version number
-    -e, --exec <value>   output direction of <value>
-  
-  Usage:
-  
-  # output direction of given value
-  $ direction -e "@"
-  # neutral
-  
-  # output direction of in.txt to out.txt
-  $ direction in.txt > out.txt
-  
-  # output direction from stdin to to out.txt
-  $ echo "الانجليزية" | direction
-  # rtl
+Usage: direction [options] words...
+
+Detect directionality: left-to-right, right-to-left, or neutral
+
+Options:
+
+  -h, --help           output usage information
+  -v, --version        output version number
+
+Usage:
+
+# output direction of given values
+$ direction @
+# neutral
+
+# output direction from stdin
+$ echo "الانجليزية" | direction
+# rtl
 ```
 
 ## License

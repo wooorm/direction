@@ -8,8 +8,8 @@
 var direction,
     pack;
 
-pack = require('./package.json');
 direction = require('./');
+pack = require('./package.json');
 
 /*
  * Arguments.
@@ -19,33 +19,41 @@ var argv;
 
 argv = process.argv.slice(2);
 
+/*
+ * Command.
+ */
+
+var command;
+
+command = Object.keys(pack.bin)[0];
+
 /**
- * Show help message.
+ * Help.
+ *
+ * @return {string}
  */
 function help() {
-    console.log([
+    return [
         '',
-        'Usage: direction [options] <file>',
+        'Usage: ' + command + ' [options] words...',
+        '',
+        pack.description,
         '',
         'Options:',
         '',
         '  -h, --help           output usage information',
         '  -v, --version        output version number',
-        '  -e, --exec <value>   output direction of <value>',
         '',
         'Usage:',
         '',
-        '# output direction of given value',
-        '$ direction -e "@"',
+        '# output direction of given values',
+        '$ ' + command + ' @',
         '# neutral',
         '',
-        '# output direction of in.txt to out.txt',
-        '$ direction in.txt > out.txt',
-        '',
-        '# output direction from stdin to to out.txt',
-        '$ echo "الانجليزية" | direction',
+        '# output direction from stdin',
+        '$ echo "الانجليزية" | ' + command,
         '# rtl'
-    ].join('\n  ') + '\n');
+    ].join('\n  ') + '\n';
 }
 
 /*
@@ -56,25 +64,18 @@ if (
     argv.indexOf('--help') === 0 ||
     argv.indexOf('-h') === 0
 ) {
-    help();
+    console.log(help());
 } else if (
     argv.indexOf('--version') === 0 ||
     argv.indexOf('-v') === 0
 ) {
     console.log(pack.version);
-} else if (
-    argv.indexOf('--exec') === 0 ||
-    argv.indexOf('-e') === 0
-) {
-    if (argv[1]) {
-        console.log(direction(argv[1]));
-    } else {
-        help();
-    }
+} else if (argv[0]) {
+    console.log(direction(argv.join(' ')));
 } else {
     process.stdin.resume();
     process.stdin.setEncoding('utf8');
     process.stdin.on('data', function (data) {
-        console.log(direction(data));
+        console.log(direction(data.trim()));
     });
 }
