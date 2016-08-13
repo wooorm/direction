@@ -1,13 +1,27 @@
 language: node_js
-script: npm run-script test-travis
 node_js:
-- '0.10'
 - '0.11'
-after_script: npm install coveralls@2.10.0 && cat ./coverage/lcov.info | coveralls
+- '0.12'
+- '4.0'
+- '5.0'
+- '6.0'
+sudo: false
+after_success:
+- bash <(curl -s https://codecov.io/bash)
 deploy:
-  provider: npm
-  email: tituswormer@gmail.com
-  api_key:
-    secure: iTp6VpQy/DmrMR8ziCKWXUCF6Vx1bZDWfT7Axo4cQ2GgIpNbKSIRdgD40OyZwwJBAkNM/IvNJVlBH71MbQTjHFGlrcXq35nLL0DT1WlPpI/uwzrunET2rE4xnuZ8YdVA1xub1w5gbSnpde7fP2jVfJ2lFy3zSYTVK4EU983AFcc=
-  on:
-    repo: wooorm/direction
+  - provider: npm
+    email: tituswormer@gmail.com
+    api_key:
+      secure: WYPOt5rbe5EQ9pKoMaRXlmPhJ7SI3qjZRxEdBuWdU0yQB8gA7HQhc4DRBfDlD0+ykt49DETH+zjTKpiHGPaHR+BVkPU4Q0a07oDKKcY8gIQvWibQw5/vc1+6Uht5joLwJIpax9jlur+SDdf3WIs+KqOa2/MHdsytNAohrEJk7Jg=
+    on:
+      tags: true
+      node: '5.0'
+  - provider: releases
+    api_key:
+      secure: sovPHm9c79THJDZ16O8zODj2GxnamBNVryWVA2tjVZBurkfaKYWq1nc+yAwuJtWlomlytJMt40vH/I75tmuOZhtb+tHXho9P2StHh6dcztE6VEg6trNFW80uXd7vSmW+DTq/PYmPaGBnFB2qClxVAh3sZaD0lvhIiuHiAVuKb24=
+    file:
+      - "direction.js"
+      - "direction.min.js"
+    on:
+      tags: true
+      node: '6.0'
