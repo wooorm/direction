@@ -1,12 +1,3 @@
-/**
- * @author Titus Wormer
- * @copyright 2014 Titus Wormer
- * @license MIT
- * @module direction
- * @fileoverview Detect directionality: left-to-right,
- *   right-to-left, or neutral.
- */
-
 'use strict';
 
 /* Expose. */
@@ -22,12 +13,7 @@ var LTR = 'A-Za-z\u00C0-\u00D6\u00D8-\u00F6' +
 var rtl = new RegExp('^[^' + LTR + ']*[' + RTL + ']');
 var ltr = new RegExp('^[^' + RTL + ']*[' + LTR + ']');
 
-/**
- * Detect directionality.
- *
- * @param {string} value - Value to check.
- * @return {string} - One of `'rtl'`, `'ltr'`, or `'neutral'`.
- */
+/* Detect directionality. */
 function direction(value) {
   value = String(value || '');
 

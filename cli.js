@@ -1,12 +1,4 @@
 #!/usr/bin/env node
-/**
- * @author Titus Wormer
- * @copyright 2014 Titus Wormer
- * @license MIT
- * @module direction
- * @fileoverview CLI for `direction`.
- */
-
 'use strict';
 
 /* Dependencies. */

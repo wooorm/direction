@@ -1,11 +1,3 @@
-/**
- * @author Titus Wormer
- * @copyright 2014 Titus Wormer
- * @license MIT
- * @module direction
- * @fileoverview Test suite for `direction`.
- */
-
 'use strict';
 
 /* Dependencies. */
