@@ -13,21 +13,18 @@
     "cli",
     "bin"
   ],
-  "dependencies": {},
-  "files": [
-    "index.js",
-    "cli.js"
-  ],
-  "bin": "cli.js",
   "repository": "https://github.com/wooorm/direction",
   "bugs": "https://github.com/wooorm/direction/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
   ],
-  "engines": {
-    "node": ">=0.11.0"
-  },
+  "bin": "cli.js",
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "dependencies": {},
   "devDependencies": {
     "browserify": "^13.0.0",
     "esmangle": "^1.0.0",
