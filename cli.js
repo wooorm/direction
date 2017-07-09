@@ -1,14 +1,11 @@
 #!/usr/bin/env node
 'use strict';
 
-/* Dependencies. */
 var pack = require('./package.json');
 var direction = require('./');
 
-/* Arguments. */
 var argv = process.argv.slice(2);
 
-/* Program. */
 if (
   argv.indexOf('--help') !== -1 ||
   argv.indexOf('-h') !== -1
@@ -29,11 +26,6 @@ if (
   console.log(direction(argv.join(' ')));
 }
 
-/**
- * Help.
- *
- * @return {string}
- */
 function help() {
   return [
     '',

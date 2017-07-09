@@ -1,13 +1,11 @@
 'use strict';
 
-/* Dependencies. */
 var PassThrough = require('stream').PassThrough;
 var test = require('tape');
 var execa = require('execa');
 var version = require('./package').version;
 var direction = require('./');
 
-/* Fixtures. */
 var fixtures = [
   {input: '0', output: 'neutral'},
   {input: '123', output: 'neutral'},
@@ -32,7 +30,6 @@ var fixtures = [
   {input: 'بسيطة', output: 'rtl'}
 ];
 
-/* API. */
 test('api', function (t) {
   t.equal(
     direction(),
@@ -51,7 +48,6 @@ test('api', function (t) {
   t.end();
 });
 
-/* CLI. */
 test('cli', function (t) {
   var input = new PassThrough();
 
