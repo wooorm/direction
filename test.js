@@ -8,29 +8,29 @@ var version = require('./package').version;
 var direction = require('./');
 
 /* Fixtures. */
-var fixtures = {
-  'a': 'ltr',
-  '\u05e0': 'rtl',
-  '\u0000': 'neutral',
-  '\u0020': 'neutral',
-  '!': 'neutral',
-  '@': 'neutral',
-  '[': 'neutral',
-  '`': 'neutral',
-  '0': 'neutral',
-  '123': 'neutral',
-  'A': 'ltr',
-  'english': 'ltr',
-  'sentence': 'ltr',
-  'Un': 'ltr',
-  'simple': 'ltr',
-  'anglais': 'ltr',
-  'phrase': 'ltr',
-  'أ': 'rtl',
-  'الجملة': 'rtl',
-  'الانجليزية': 'rtl',
-  'بسيطة': 'rtl'
-};
+var fixtures = [
+  {input: '0', output: 'neutral'},
+  {input: '123', output: 'neutral'},
+  {input: 'a', output: 'ltr'},
+  {input: 'נ', output: 'rtl'},
+  {input: '\u0000', output: 'neutral'},
+  {input: ' ', output: 'neutral'},
+  {input: '!', output: 'neutral'},
+  {input: '@', output: 'neutral'},
+  {input: '[', output: 'neutral'},
+  {input: '`', output: 'neutral'},
+  {input: 'A', output: 'ltr'},
+  {input: 'english', output: 'ltr'},
+  {input: 'sentence', output: 'ltr'},
+  {input: 'Un', output: 'ltr'},
+  {input: 'simple', output: 'ltr'},
+  {input: 'anglais', output: 'ltr'},
+  {input: 'phrase', output: 'ltr'},
+  {input: 'أ', output: 'rtl'},
+  {input: 'الجملة', output: 'rtl'},
+  {input: 'الانجليزية', output: 'rtl'},
+  {input: 'بسيطة', output: 'rtl'}
+];
 
 /* API. */
 test('api', function (t) {
@@ -40,11 +40,11 @@ test('api', function (t) {
     'should classify nully as `neutral`'
   );
 
-  Object.keys(fixtures).forEach(function (value) {
+  fixtures.forEach(function (check) {
     t.equal(
-      direction(value),
-      fixtures[value],
-      'should classify `' + value + '` as `' + fixtures[value] + '`'
+      direction(check.input),
+      check.output,
+      'should classify `' + check.input + '` as `' + check.output + '`'
     );
   });
 
