@@ -19,14 +19,14 @@ if (
   argv.indexOf('-v') !== -1
 ) {
   console.log(pack.version);
-} else if (argv.length) {
-  console.log(direction(argv.join(' ')));
-} else {
+} else if (argv.length === 0) {
   process.stdin.resume();
   process.stdin.setEncoding('utf8');
   process.stdin.on('data', function (data) {
     console.log(direction(data));
   });
+} else {
+  console.log(direction(argv.join(' ')));
 }
 
 /**
