@@ -1,7 +1,7 @@
 language: node_js
 node_js:
 - '4.0'
-- '8.0'
+- '9.0'
 sudo: false
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
@@ -11,7 +11,7 @@ deploy:
       secure: WYPOt5rbe5EQ9pKoMaRXlmPhJ7SI3qjZRxEdBuWdU0yQB8gA7HQhc4DRBfDlD0+ykt49DETH+zjTKpiHGPaHR+BVkPU4Q0a07oDKKcY8gIQvWibQw5/vc1+6Uht5joLwJIpax9jlur+SDdf3WIs+KqOa2/MHdsytNAohrEJk7Jg=
     on:
       tags: true
-      node: '4.0'
+      node: '9.0'
   - provider: releases
     api_key:
       secure: sovPHm9c79THJDZ16O8zODj2GxnamBNVryWVA2tjVZBurkfaKYWq1nc+yAwuJtWlomlytJMt40vH/I75tmuOZhtb+tHXho9P2StHh6dcztE6VEg6trNFW80uXd7vSmW+DTq/PYmPaGBnFB2qClxVAh3sZaD0lvhIiuHiAVuKb24=
@@ -20,4 +20,4 @@ deploy:
       - "direction.min.js"
     on:
       tags: true
-      node: '8.0'
+      node: '9.0'
