@@ -13,12 +13,12 @@ npm install direction
 Use:
 
 ```js
-var direction = require('direction');
+var direction = require('direction')
 
-direction('A'); //=> 'ltr'
-direction('anglais'); //=> 'ltr'
-direction('بسيطة'); //=> 'rtl'
-direction('@'); //=> 'neutral'
+direction('A') // => 'ltr'
+direction('anglais') // => 'ltr'
+direction('بسيطة') // => 'rtl'
+direction('@') // => 'neutral'
 ```
 
 ## CLI
