@@ -21,27 +21,26 @@ if (argv.indexOf('--help') !== -1 || argv.indexOf('-h') !== -1) {
 }
 
 function help() {
-  return (
-    [
-      '',
-      'Usage: ' + pack.name + ' [options] <words...>',
-      '',
-      pack.description,
-      '',
-      'Options:',
-      '',
-      '  -h, --help           output usage information',
-      '  -v, --version        output version number',
-      '',
-      'Usage:',
-      '',
-      '# output directionality',
-      '$ ' + pack.name + ' @',
-      '# ' + direction('@'),
-      '',
-      '# output directionality from stdin',
-      "$ echo 'الانجليزية' | " + pack.name,
-      '# ' + direction('الانجليزية')
-    ].join('\n  ') + '\n'
-  )
+  return [
+    '',
+    '  Usage: ' + pack.name + ' [options] <words...>',
+    '',
+    '  ' + pack.description,
+    '',
+    '  Options:',
+    '',
+    '    -h, --help           output usage information',
+    '    -v, --version        output version number',
+    '',
+    '  Usage:',
+    '',
+    '  # output directionality',
+    '  $ ' + pack.name + ' @',
+    '  # ' + direction('@'),
+    '',
+    '  # output directionality from stdin',
+    "  $ echo 'الانجليزية' | " + pack.name,
+    '  # ' + direction('الانجليزية'),
+    ''
+  ].join('\n')
 }
