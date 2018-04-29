@@ -3,8 +3,8 @@
 var PassThrough = require('stream').PassThrough;
 var test = require('tape');
 var execa = require('execa');
-var version = require('./package').version;
-var direction = require('./');
+var version = require('./package.json').version;
+var direction = require('.');
 
 var fixtures = [
   {input: '0', output: 'neutral'},

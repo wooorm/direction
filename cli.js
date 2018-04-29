@@ -2,7 +2,7 @@
 'use strict';
 
 var pack = require('./package.json');
-var direction = require('./');
+var direction = require('.');
 
 var argv = process.argv.slice(2);
 
