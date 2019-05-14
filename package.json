@@ -38,8 +38,8 @@
   },
   "scripts": {
     "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
-    "build-bundle": "browserify . direction -o direction.js",
-    "build-mangle": "browserify . direction -p tinyify -o direction.min.js",
+    "build-bundle": "browserify . -s direction -o direction.js",
+    "build-mangle": "browserify . -s direction -p tinyify -o direction.min.js",
     "build": "npm run build-bundle && npm run build-mangle",
     "test-api": "node test",
     "test-coverage": "nyc --reporter lcov tape test.js",
