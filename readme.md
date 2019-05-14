@@ -66,6 +66,6 @@ $ echo 'الانجليزية' | direction
 
 [codecov]: https://codecov.io/github/wooorm/direction
 
-[license]: LICENSE
+[license]: license
 
 [author]: http://wooorm.com
