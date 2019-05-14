@@ -1,4 +1,9 @@
-# direction [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
+# direction
+
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
 
 Detect direction: left-to-right, right-to-left, or neutral.
 
@@ -58,13 +63,21 @@ $ echo 'الانجليزية' | direction
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/wooorm/direction.svg
+[build-badge]: https://img.shields.io/travis/wooorm/direction.svg
 
-[travis]: https://travis-ci.org/wooorm/direction
+[build]: https://travis-ci.org/wooorm/direction
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/direction.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/direction.svg
 
-[codecov]: https://codecov.io/github/wooorm/direction
+[coverage]: https://codecov.io/github/wooorm/direction
+
+[downloads-badge]: https://img.shields.io/npm/dm/direction.svg
+
+[downloads]: https://www.npmjs.com/package/direction
+
+[size-badge]: https://img.shields.io/bundlephobia/minzip/direction.svg
+
+[size]: https://bundlephobia.com/result?p=direction
 
 [license]: license
 
