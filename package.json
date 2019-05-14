@@ -62,11 +62,6 @@
   "xo": {
     "prettier": true,
     "esnext": false,
-    "rules": {
-      "no-var": "off",
-      "object-shorthand": "off",
-      "prefer-arrow-callback": "off"
-    },
     "ignores": [
       "direction.js"
     ]
