@@ -1,16 +1,16 @@
 language: node_js
 node_js:
-- lts/boron
-- node
+  - lts/dubnium
+  - node
 sudo: false
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
   provider: releases
   skip_cleanup: true
   api_key:
-    secure: sovPHm9c79THJDZ16O8zODj2GxnamBNVryWVA2tjVZBurkfaKYWq1nc+yAwuJtWlomlytJMt40vH/I75tmuOZhtb+tHXho9P2StHh6dcztE6VEg6trNFW80uXd7vSmW+DTq/PYmPaGBnFB2qClxVAh3sZaD0lvhIiuHiAVuKb24=
+    secure: bduWz9C0VYm8zdrVI+qB8p2ZLy4a9K9vDaOOuSuUpp3h+80NVXSK1lIIC6+rlc/1M1new3Zb5iOC4xxLaqHh5XK5o1le+ye1fDH81stA7epRlM4XAzRhY4LNIbpR7cY/Lz1EhU2GMAo7yKyaj9uzX3WFQTb8Ryr3kstQ3VjKTDU=
   file:
-    - "direction.js"
-    - "direction.min.js"
+    - 'direction.js'
+    - 'direction.min.js'
   on:
     tags: true
