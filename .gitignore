@@ -6,3 +6,4 @@ node_modules/
 direction.js
 direction.min.js
 yarn.lock
+.idea
