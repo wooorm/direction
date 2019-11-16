@@ -20,8 +20,10 @@
     "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
   ],
   "bin": "cli.js",
+  "types": "index.d.ts",
   "files": [
     "index.js",
+    "index.d.ts",
     "cli.js"
   ],
   "dependencies": {},
