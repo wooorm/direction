@@ -1,9 +1,9 @@
 'use strict'
 
+var childProcess = require('child_process')
 var PassThrough = require('stream').PassThrough
 var test = require('tape')
-var execa = require('execa')
-var version = require('./package.json').version
+var pkg = require('./package.json')
 var direction = require('.')
 
 var fixtures = [
@@ -46,34 +46,42 @@ test('api', function(t) {
 
 test('cli', function(t) {
   var input = new PassThrough()
+  var help = ['-h', '--help']
+  var version = ['-v', '--version']
 
   t.plan(7)
 
-  execa.stdout('./cli.js', ['   ', 'abc']).then(function(result) {
-    t.equal(result, 'ltr', 'arguments')
+  childProcess.exec('./cli.js abc', function(err, stdout, stderr) {
+    t.deepEqual([err, stderr, stdout], [null, '', 'ltr\n'], 'arguments')
   })
 
-  execa.stdout('./cli.js', ['   ', '\t']).then(function(result) {
-    t.equal(result, 'neutral', 'neutral')
+  childProcess.exec('./cli.js @', function(err, stdout, stderr) {
+    t.deepEqual([err, stderr, stdout], [null, '', 'neutral\n'], 'neutral')
   })
 
-  execa.stdout('./cli.js', {input: input}).then(function(result) {
-    t.equal(result, 'rtl', 'stdin')
+  var subprocess = childProcess.exec('./cli.js', function(err, stdout, stderr) {
+    t.deepEqual([err, stderr, stdout], [null, '', 'rtl\n'], 'stdin')
   })
 
+  input.pipe(subprocess.stdin)
   input.write('لة')
-
   setImmediate(function() {
     input.end('الجم')
   })
-  ;['-h', '--help'].forEach(function(flag) {
-    execa.stdout('./cli.js', [flag]).then(function(result) {
-      t.ok(/\s+Usage: direction/.test(result), flag)
+
+  help.forEach(function(flag) {
+    childProcess.exec('./cli.js ' + flag, function(err, stdout, stderr) {
+      t.deepEqual(
+        [err, stderr, /\s+Usage: direction/.test(stdout)],
+        [null, '', true],
+        flag
+      )
     })
   })
-  ;['-v', '--version'].forEach(function(flag) {
-    execa.stdout('./cli.js', [flag]).then(function(result) {
-      t.equal(result, version, flag)
+
+  version.forEach(function(flag) {
+    childProcess.exec('./cli.js ' + flag, function(err, stdout, stderr) {
+      t.deepEqual([err, stderr, stdout], [null, '', pkg.version + '\n'], flag)
     })
   })
 })
