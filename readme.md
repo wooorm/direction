@@ -11,7 +11,7 @@ Detect direction: left-to-right, right-to-left, or neutral.
 
 Install:
 
-```bash
+```sh
 npm install direction
 ```
 
