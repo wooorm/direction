@@ -31,7 +31,7 @@ var fixtures = [
 ]
 
 test('api', function(t) {
-  t.equal(direction(), 'neutral', 'should classify nully as `neutral`')
+  t.equal(direction(), 'neutral', 'should classify nullish as `neutral`')
 
   fixtures.forEach(function(check) {
     t.equal(
