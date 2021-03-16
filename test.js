@@ -31,15 +31,21 @@ var fixtures = [
 ]
 
 test('api', function (t) {
+  var index = -1
+
   t.equal(direction(), 'neutral', 'should classify nullish as `neutral`')
 
-  fixtures.forEach(function (check) {
+  while (++index < fixtures.length) {
     t.equal(
-      direction(check.input),
-      check.output,
-      'should classify `' + check.input + '` as `' + check.output + '`'
+      direction(fixtures[index].input),
+      fixtures[index].output,
+      'should classify `' +
+        fixtures[index].input +
+        '` as `' +
+        fixtures[index].output +
+        '`'
     )
-  })
+  }
 
   t.end()
 })
@@ -51,21 +57,20 @@ test('cli', function (t) {
 
   t.plan(7)
 
-  childProcess.exec('./cli.js abc', function (err, stdout, stderr) {
-    t.deepEqual([err, stderr, stdout], [null, '', 'ltr\n'], 'arguments')
+  childProcess.exec('./cli.js abc', function (error, stdout, stderr) {
+    t.deepEqual([error, stderr, stdout], [null, '', 'ltr\n'], 'arguments')
   })
 
-  childProcess.exec('./cli.js @', function (err, stdout, stderr) {
-    t.deepEqual([err, stderr, stdout], [null, '', 'neutral\n'], 'neutral')
+  childProcess.exec('./cli.js @', function (error, stdout, stderr) {
+    t.deepEqual([error, stderr, stdout], [null, '', 'neutral\n'], 'neutral')
   })
 
-  var subprocess = childProcess.exec('./cli.js', function (
-    err,
-    stdout,
-    stderr
-  ) {
-    t.deepEqual([err, stderr, stdout], [null, '', 'rtl\n'], 'stdin')
-  })
+  var subprocess = childProcess.exec(
+    './cli.js',
+    function (error, stdout, stderr) {
+      t.deepEqual([error, stderr, stdout], [null, '', 'rtl\n'], 'stdin')
+    }
+  )
 
   input.pipe(subprocess.stdin)
   input.write('لة')
@@ -74,9 +79,9 @@ test('cli', function (t) {
   })
 
   help.forEach(function (flag) {
-    childProcess.exec('./cli.js ' + flag, function (err, stdout, stderr) {
+    childProcess.exec('./cli.js ' + flag, function (error, stdout, stderr) {
       t.deepEqual(
-        [err, stderr, /\s+Usage: direction/.test(stdout)],
+        [error, stderr, /\s+Usage: direction/.test(stdout)],
         [null, '', true],
         flag
       )
@@ -84,8 +89,8 @@ test('cli', function (t) {
   })
 
   version.forEach(function (flag) {
-    childProcess.exec('./cli.js ' + flag, function (err, stdout, stderr) {
-      t.deepEqual([err, stderr, stdout], [null, '', pkg.version + '\n'], flag)
+    childProcess.exec('./cli.js ' + flag, function (error, stdout, stderr) {
+      t.deepEqual([error, stderr, stdout], [null, '', pkg.version + '\n'], flag)
     })
   })
 })
