@@ -7,6 +7,12 @@ var ltrRange =
 var rtl = new RegExp('^[^' + ltrRange + ']*[' + rtlRange + ']')
 var ltr = new RegExp('^[^' + rtlRange + ']*[' + ltrRange + ']')
 
+/**
+ * Detect direction.
+ *
+ * @param {string} value
+ * @returns {'rtl' | 'ltr' | 'neutral'}
+ */
 export function direction(value) {
   var source = String(value || '')
   return rtl.test(source) ? 'rtl' : ltr.test(source) ? 'ltr' : 'neutral'

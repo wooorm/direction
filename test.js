@@ -4,7 +4,8 @@ import {PassThrough} from 'stream'
 import test from 'tape'
 import {direction} from './index.js'
 
-var pkg = JSON.parse(fs.readFileSync('package.json'))
+/** @type {{[key: string]: unknown, version: string}} */
+var pkg = JSON.parse(String(fs.readFileSync('package.json')))
 
 var fixtures = [
   {input: '0', output: 'neutral'},
@@ -33,6 +34,7 @@ var fixtures = [
 test('api', function (t) {
   var index = -1
 
+  // @ts-ignore
   t.equal(direction(), 'neutral', 'should classify nullish as `neutral`')
 
   while (++index < fixtures.length) {

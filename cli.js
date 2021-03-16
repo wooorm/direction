@@ -3,7 +3,8 @@ import fs from 'fs'
 
 import {direction} from './index.js'
 
-var pack = JSON.parse(fs.readFileSync('package.json'))
+/** @type {{[key: string]: unknown, version: string}} */
+var pack = JSON.parse(String(fs.readFileSync('package.json')))
 
 var argv = process.argv.slice(2)
 
@@ -15,7 +16,7 @@ if (argv.includes('--help') || argv.includes('-h')) {
   process.stdin.resume()
   process.stdin.setEncoding('utf8')
   process.stdin.on('data', function (data) {
-    console.log(direction(data))
+    console.log(direction(String(data)))
   })
 } else {
   console.log(direction(argv.join(' ')))
