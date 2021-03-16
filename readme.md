@@ -63,9 +63,9 @@ $ echo 'الانجليزية' | direction
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/wooorm/direction.svg
+[build-badge]: https://github.com/wooorm/direction/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/wooorm/direction
+[build]: https://github.com/wooorm/direction/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/direction.svg
 
