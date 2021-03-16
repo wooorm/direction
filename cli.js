@@ -1,14 +1,15 @@
 #!/usr/bin/env node
-'use strict'
+import fs from 'fs'
 
-var pack = require('./package.json')
-var direction = require('.')
+import {direction} from './index.js'
+
+var pack = JSON.parse(fs.readFileSync('package.json'))
 
 var argv = process.argv.slice(2)
 
-if (argv.indexOf('--help') !== -1 || argv.indexOf('-h') !== -1) {
+if (argv.includes('--help') || argv.includes('-h')) {
   console.log(help())
-} else if (argv.indexOf('--version') !== -1 || argv.indexOf('-v') !== -1) {
+} else if (argv.includes('--version') || argv.includes('-v')) {
   console.log(pack.version)
 } else if (argv.length === 0) {
   process.stdin.resume()

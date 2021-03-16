@@ -1,6 +1,2 @@
-.nyc_output/
 coverage/
 *.md
-*.json
-direction.js
-direction.min.js

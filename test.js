@@ -1,10 +1,10 @@
-'use strict'
+import fs from 'fs'
+import childProcess from 'child_process'
+import {PassThrough} from 'stream'
+import test from 'tape'
+import {direction} from './index.js'
 
-var childProcess = require('child_process')
-var PassThrough = require('stream').PassThrough
-var test = require('tape')
-var pkg = require('./package.json')
-var direction = require('.')
+var pkg = JSON.parse(fs.readFileSync('package.json'))
 
 var fixtures = [
   {input: '0', output: 'neutral'},

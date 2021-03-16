@@ -7,18 +7,19 @@
 
 Detect direction: left-to-right, right-to-left, or neutral.
 
-## API
+## Install
 
-Install:
+This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
+instead of `require`d.
 
 ```sh
 npm install direction
 ```
 
-Use:
+## Use
 
 ```js
-var direction = require('direction')
+import {direction} from 'direction'
 
 direction('A') // => 'ltr'
 direction('anglais') // => 'ltr'
@@ -26,15 +27,17 @@ direction('بسيطة') // => 'rtl'
 direction('@') // => 'neutral'
 ```
 
+## API
+
+This package exports the following identifiers: `direction`.
+There is no default export.
+
+### `direction(value)`
+
+Detect the direction of `value` (`string?`).
+Returns `'ltr'`, `'rtl'`, or `'neutral'`.
+
 ## CLI
-
-Install:
-
-```sh
-npm install -g direction
-```
-
-Use:
 
 ```txt
 Usage: direction [options] <words...>
