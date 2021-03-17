@@ -11,7 +11,7 @@
   "type": "module",
   "devDependencies": {
     "cssnano": "^4.0.0",
-    "direction": "^1.0.0",
+    "direction": "^2.0.0",
     "esbuild": "^0.9.0",
     "postcss-cli": "^8.0.0",
     "postcss-preset-env": "^6.0.0",
