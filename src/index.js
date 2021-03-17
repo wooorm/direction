@@ -1,8 +1,6 @@
-'use strict'
+import {direction} from 'direction'
 
 /* eslint-env browser */
-
-var direction = require('direction')
 
 var $input = document.querySelector('textarea')
 var $output = document.querySelector('output')
