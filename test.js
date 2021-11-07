@@ -1,6 +1,6 @@
-import fs from 'fs'
-import childProcess from 'child_process'
-import {PassThrough} from 'stream'
+import fs from 'node:fs'
+import childProcess from 'node:child_process'
+import {PassThrough} from 'node:stream'
 import test from 'tape'
 import {direction} from './index.js'
 

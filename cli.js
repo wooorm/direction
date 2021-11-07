@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import fs from 'fs'
+import fs from 'node:fs'
+import process from 'node:process'
 
 import {direction} from './index.js'
 
