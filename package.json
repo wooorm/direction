@@ -1,6 +1,6 @@
 {
   "name": "direction",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Detect the direction of text: left-to-right, right-to-left, or neutral",
   "license": "MIT",
   "keywords": [
