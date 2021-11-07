@@ -62,12 +62,7 @@
     "trailingComma": "none"
   },
   "xo": {
-    "prettier": true,
-    "rules": {
-      "no-var": "off",
-      "prefer-arrow-callback": "off",
-      "unicorn/no-array-for-each": "off"
-    }
+    "prettier": true
   },
   "remarkConfig": {
     "plugins": [

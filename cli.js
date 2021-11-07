@@ -5,9 +5,9 @@ import process from 'node:process'
 import {direction} from './index.js'
 
 /** @type {{[key: string]: unknown, version: string}} */
-var pack = JSON.parse(String(fs.readFileSync('package.json')))
+const pack = JSON.parse(String(fs.readFileSync('package.json')))
 
-var argv = process.argv.slice(2)
+const argv = process.argv.slice(2)
 
 if (argv.includes('--help') || argv.includes('-h')) {
   console.log(help())

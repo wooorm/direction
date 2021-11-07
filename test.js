@@ -5,9 +5,9 @@ import test from 'tape'
 import {direction} from './index.js'
 
 /** @type {{[key: string]: unknown, version: string}} */
-var pkg = JSON.parse(String(fs.readFileSync('package.json')))
+const pkg = JSON.parse(String(fs.readFileSync('package.json')))
 
-var fixtures = [
+const fixtures = [
   {input: '0', output: 'neutral'},
   {input: '123', output: 'neutral'},
   {input: 'a', output: 'ltr'},
@@ -32,7 +32,7 @@ var fixtures = [
 ]
 
 test('api', function (t) {
-  var index = -1
+  let index = -1
 
   // @ts-ignore
   t.equal(direction(), 'neutral', 'should classify nullish as `neutral`')
@@ -53,9 +53,7 @@ test('api', function (t) {
 })
 
 test('cli', function (t) {
-  var input = new PassThrough()
-  var help = ['-h', '--help']
-  var version = ['-v', '--version']
+  const input = new PassThrough()
 
   t.plan(7)
 
@@ -67,7 +65,7 @@ test('cli', function (t) {
     t.deepEqual([error, stderr, stdout], [null, '', 'neutral\n'], 'neutral')
   })
 
-  var subprocess = childProcess.exec(
+  const subprocess = childProcess.exec(
     './cli.js',
     function (error, stdout, stderr) {
       t.deepEqual([error, stderr, stdout], [null, '', 'rtl\n'], 'stdin')
@@ -80,7 +78,13 @@ test('cli', function (t) {
     input.end('الجم')
   })
 
-  help.forEach(function (flag) {
+  help('-h')
+  help('--help')
+
+  /**
+   * @param {string} flag
+   */
+  function help(flag) {
     childProcess.exec('./cli.js ' + flag, function (error, stdout, stderr) {
       t.deepEqual(
         [error, stderr, /\s+Usage: direction/.test(stdout)],
@@ -88,11 +92,17 @@ test('cli', function (t) {
         flag
       )
     })
-  })
+  }
 
-  version.forEach(function (flag) {
+  version('-v')
+  version('--version')
+
+  /**
+   * @param {string} flag
+   */
+  function version(flag) {
     childProcess.exec('./cli.js ' + flag, function (error, stdout, stderr) {
       t.deepEqual([error, stderr, stdout], [null, '', pkg.version + '\n'], flag)
     })
-  })
+  }
 })
