@@ -13,7 +13,7 @@ const ltr = new RegExp('^[^' + rtlRange + ']*[' + ltrRange + ']')
  * Detect direction.
  *
  * @param {string} value
- * @returns {'rtl' | 'ltr' | 'neutral'}
+ * @returns {'rtl'|'ltr'|'neutral'}
  */
 export function direction(value) {
   const source = String(value || '')

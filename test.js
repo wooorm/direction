@@ -1,3 +1,4 @@
+import assert from 'node:assert'
 import fs from 'node:fs'
 import childProcess from 'node:child_process'
 import {PassThrough} from 'node:stream'
@@ -72,6 +73,7 @@ test('cli', function (t) {
     }
   )
 
+  assert(subprocess.stdin, 'expected stdin')
   input.pipe(subprocess.stdin)
   input.write('لة')
   setImmediate(function () {
