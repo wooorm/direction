@@ -5,15 +5,56 @@
 [![Downloads][downloads-badge]][downloads]
 [![Size][size-badge]][size]
 
-Detect direction: left-to-right, right-to-left, or neutral.
+Detect the direction of text: left-to-right, right-to-left, or neutral.
+
+## Contents
+
+*   [What is this?](#what-is-this)
+*   [When should I use this?](#when-should-i-use-this)
+*   [Install](#install)
+*   [Use](#use)
+*   [API](#api)
+    *   [`direction(value)`](#directionvalue)
+*   [CLI](#cli)
+*   [Types](#types)
+*   [Compatibility](#compatibility)
+*   [Security](#security)
+*   [Contribute](#contribute)
+*   [License](#license)
+
+## What is this?
+
+This package detects whether text is written left-to-right or right-to-left.
+
+## When should I use this?
+
+This is a simple and fast algorithm.
+It looks at the first strong left-to-right or right-to-left character (for
+example, the letter `a` is LTR, the letter `ى` is RTL).
+That’s often enough but might be too naïve as it doesn’t take percentages or so
+into account.
 
 ## Install
 
-This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
-instead of `require`d.
+This package is [ESM only][esm].
+In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
 
 ```sh
 npm install direction
+```
+
+In Deno with [Skypack][]:
+
+```js
+import {direction} from 'https://cdn.skypack.dev/direction@2?dts'
+```
+
+In browsers with [Skypack][]:
+
+```html
+<script type="module">
+  import {direction} from 'https://cdn.skypack.dev/direction@2?min'
+</script>
 ```
 
 ## Use
@@ -29,7 +70,7 @@ direction('@') // => 'neutral'
 
 ## API
 
-This package exports the following identifiers: `direction`.
+This package exports the following identifier: `direction`.
 There is no default export.
 
 ### `direction(value)`
@@ -42,7 +83,7 @@ Returns `'ltr'`, `'rtl'`, or `'neutral'`.
 ```txt
 Usage: direction [options] <words...>
 
-Detect directionality: left-to-right, right-to-left, or neutral
+Detect the direction of text: left-to-right, right-to-left, or neutral
 
 Options:
 
@@ -59,6 +100,26 @@ $ direction @
 $ echo 'الانجليزية' | direction
 # rtl
 ```
+
+## Types
+
+This package is fully typed with [TypeScript][].
+There are no extra exported types.
+
+## Compatibility
+
+This package is at least compatible with all maintained versions of Node.js.
+As of now, that is Node.js 12.20+, 14.14+, and 16.0+.
+It also works in Deno and modern browsers.
+
+## Security
+
+This package is safe.
+
+## Contribute
+
+Yes please!
+See [How to Contribute to Open Source][contribute].
 
 ## License
 
@@ -82,6 +143,16 @@ $ echo 'الانجليزية' | direction
 
 [size]: https://bundlephobia.com/result?p=direction
 
+[npm]: https://docs.npmjs.com/cli/install
+
+[skypack]: https://www.skypack.dev
+
 [license]: license
 
 [author]: https://wooorm.com
+
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
+[typescript]: https://www.typescriptlang.org
+
+[contribute]: https://opensource.guide/how-to-contribute/
