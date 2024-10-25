@@ -1,60 +1,39 @@
 {
-  "name": "www-direction",
-  "private": true,
-  "license": "MIT",
-  "repository": "wooorm/direction",
-  "bugs": "https://github.com/wooorm/direction/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
-  "contributors": [
-    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
-  ],
-  "type": "module",
-  "devDependencies": {
-    "cssnano": "^4.0.0",
-    "direction": "^2.0.0",
-    "esbuild": "^0.9.0",
-    "postcss-cli": "^8.0.0",
-    "postcss-preset-env": "^6.0.0",
-    "prettier": "^2.0.0",
-    "rehype-cli": "^10.0.0",
-    "rehype-preset-minify": "^5.0.0",
-    "rehype-prevent-favicon-request": "^2.0.0",
-    "remark-cli": "^9.0.0",
-    "remark-preset-wooorm": "^8.0.0",
-    "stylelint": "^13.0.0",
-    "stylelint-config-standard": "^21.0.0",
-    "xo": "^0.38.0"
-  },
-  "scripts": {
-    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix && stylelint src/index.css --fix",
-    "build:js": "esbuild src/index.js --bundle --minify --target=es6 --outfile=dest/index.nomodule.js && esbuild src/index.js --bundle --minify --target=es2020 --format=esm --outfile=dest/index.module.js",
-    "build:css": "postcss src/index.css -o dest/index.css",
-    "build:html": "rehype -u preset-minify -u prevent-favicon-request src -o dest",
-    "build": "npm run build:js && npm run build:css && npm run build:html",
-    "test": "npm run format && npm run build"
-  },
-  "prettier": {
-    "tabWidth": 2,
-    "useTabs": false,
-    "singleQuote": true,
-    "bracketSpacing": false,
-    "semi": false,
-    "trailingComma": "none"
-  },
-  "xo": {
-    "prettier": true,
-    "rules": {
-      "no-var": "off"
-    }
-  },
-  "stylelint": {
-    "extends": "stylelint-config-standard"
-  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
   ],
+  "bugs": "https://github.com/wooorm/direction/issues",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "cssnano": "^7.0.0",
+    "devlop": "^1.1.0",
+    "direction": "^2.0.1",
+    "esbuild": "^0.24.0",
+    "postcss-cli": "^11.0.0",
+    "postcss-preset-env": "^10.0.0",
+    "prettier": "^3.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "rehype-cli": "^12.0.0",
+    "rehype-preset-minify": "^7.0.0",
+    "rehype-prevent-favicon-request": "^4.0.0",
+    "remark-cli": "^12.0.0",
+    "remark-preset-wooorm": "^10.0.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^36.0.0",
+    "type-coverage": "^2.0.0",
+    "typescript": "^5.0.0",
+    "xo": "^0.59.0"
+  },
+  "license": "MIT",
+  "name": "www-direction",
   "postcss": {
     "plugins": {
       "postcss-preset-env": {},
@@ -63,9 +42,44 @@
       }
     }
   },
+  "prettier": {
+    "bracketSpacing": false,
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "useTabs": false
+  },
+  "private": true,
   "remarkConfig": {
     "plugins": [
-      "preset-wooorm"
+      "remark-preset-wooorm"
     ]
+  },
+  "repository": "wooorm/direction",
+  "typeCoverage": {
+    "atLeast": 100,
+    "strict": true
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc --build --clean && tsc --build && type-coverage",
+    "format": "remark --frail --output --quiet -- . && prettier --log-level warn --write -- . && xo --fix && stylelint src/index.css --fix",
+    "generate:css": "postcss --output dest/index.css -- src/index.css",
+    "generate:html": "rehype --frail --output dest/ --quiet --use rehype-preset-minify --use rehype-prevent-favicon-request -- src/",
+    "generate:js:module": "esbuild src/index.js --bundle --conditions=browser,production --define:process.env.NODE_ENV=\\\"production\\\" --format=esm --log-level=warning --minify --outfile=dest/index.module.js --target=es2020",
+    "generate:js:nomodule": "esbuild src/index.js --bundle --conditions=browser,production --define:process.env.NODE_ENV=\\\"production\\\" --log-level=warning --minify --outfile=dest/index.nomodule.js --target=es6",
+    "generate:js": "npm run generate:js:module && npm run generate:js:nomodule",
+    "generate": "npm run generate:css && npm run generate:html && npm run generate:js",
+    "test": "npm run build && npm run format && npm run generate"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
+  },
+  "xo": {
+    "prettier": true,
+    "rules": {
+      "unicorn/prefer-at": "off"
+    }
   }
 }

@@ -1,8 +1,3 @@
-:root {
-  color-scheme: light dark;
-  background-color: hsl(0, 0%, 90%);
-}
-
 a {
   color: #0367d8;
 }
@@ -13,13 +8,18 @@ body {
   max-width: 30em;
 }
 
+html {
+  background-color: hsl(0deg 0% 90%);
+  color-scheme: light dark;
+}
+
 output {
   font-weight: bold;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    background-color: hsl(214, 13%, 10%);
-    color: hsl(214, 13%, 90%);
+  html {
+    color: hsl(214deg 13% 90%);
+    background-color: hsl(214deg 13% 10%);
   }
 }
